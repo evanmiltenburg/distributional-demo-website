@@ -1,5 +1,9 @@
 # Setting up the Website
 
+This screen shot shows you what the website will look like, once running:
+
+![Home page of the website](./screenshot.png "Home page")
+
 ### Preliminaries
 * To run the website, you need to have `Gensim` and `Flask` installed.
 * Download a distributional model to `./data/`

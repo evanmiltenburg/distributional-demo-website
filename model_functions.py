@@ -1,18 +1,18 @@
 from gensim.models import Word2Vec # Gensim code to load Word2Vec model
 
-path  = './data/ADD_MODEL_NAME_HERE'
-model = Word2Vec.load_word2vec_format(path, binary=True)
+# path  = './data/ADD_MODEL_NAME_HERE'
+# model = Word2Vec.load_word2vec_format(path, binary=True)
 
 # This works for testing:
-# import random
-#
-# class dummy_model(object):
-#     vocab = {'appel':1,'hond':2,'kat':3}
-#     def similarity(self,x,y): return random.random()
-#     def most_similar(self, positive=None,negative=None): return [('sheep',5),('dog',3)]
-#     def doesnt_match(self, l): return 'beschuit'
-#
-# model = dummy_model()
+import random
+
+class dummy_model(object):
+    vocab = {'appel':1,'hond':2,'kat':3}
+    def similarity(self,x,y): return random.random()
+    def most_similar(self, positive=None,negative=None): return [('sheep',5),('dog',3)]
+    def doesnt_match(self, l): return 'beschuit'
+
+model = dummy_model()
 
 vocab = set(model.vocab.keys())
 
