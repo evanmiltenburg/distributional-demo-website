@@ -1,0 +1,26 @@
+{% extends "demo_main.html" %}
+
+{% block description %}
+Here you can enter a list of words, and the algorithm will provide you with similar words.
+{% endblock %}
+
+{% block content %}
+<form id='similarform' method='post' action='/similarwords/' style="display: inline-block;">
+    <p>
+<textarea name="wordlist" rows="1" cols="40">{{ l|join(' ') }}</textarea>
+<input type='submit' value='Get similar words' />
+</p>
+
+{% if results != None %}
+Similar words:
+<ul>
+{% for word, value in results%}
+      <li>{{ word }} ({{value}})</li>
+{% endfor %}
+</ul>
+{% else %}
+Item(s) not in dictionary: <i>{{ not_in_vocab|join(', ') }}</i>.
+{% endif %}
+
+</form>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "demo_main.html" %}
+
+{% block description %}
+Here you can enter a list of words, and the algorithm will tell you which one doesn't belong.
+{% endblock %}
+
+{% block content %}
+<form id='pairform' method='post' action='/outliers/' style="display: inline-block;">
+    <p>
+<textarea name="wordlist" rows="1" cols="40">{{ l|join(' ') }}</textarea>
+<input type='submit' value='Get outlier' />
+</p>
+
+{% if outlier != None %}
+The outlier is: <i>{{ outlier }}</i>
+{% else %}
+Item(s) not in dictionary: <i>{{ not_in_vocab|join(', ') }}</i>.
+{% endif %}
+
+</form>
+{% endblock %}

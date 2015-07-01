@@ -1,0 +1,28 @@
+{% extends "demo_main.html" %}
+
+{% block description %}
+
+The word similarity measure is equal to the
+<a href="http://en.wikipedia.org/wiki/Cosine_similarity">cosine similarity</a>
+between the vectors of word 1 and word 2.
+
+{% endblock %}
+
+{% block content %}
+<form id='wordsim_form' method='post' action='/wordsimilarity/' style="display: inline-block;">
+    <fieldset>
+      <legend>Word similarity</legend>
+    <p>
+    Word 1: <input type='text' name='word1' value={{word1}} /><br />
+    Word 2: <input type='text' name='word2' value={{word2}} /> <input type='submit' value='Get similarity' /><br />
+    </p>
+   
+    {% if sim_value == None %}
+    Word(s) not in the dictionary: {{ outofdict|join(', ') }}
+    {% else %}
+    The similarity between <i>{{word1}}</i> and <i>{{word2}}</i> is: {{sim_value}}.
+    {% endif %}
+   
+   </fieldset>
+</form>
+{% endblock %}

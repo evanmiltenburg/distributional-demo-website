@@ -1,0 +1,22 @@
+{% extends "demo_main.html" %}
+
+{% block description %}
+Welcome to this demo of a distributional semantic model for <b>Dutch</b>. This model contains
+knowledge about the way Dutch words are related to each other. In the menu on the left,
+you can see several different options showcasing the capabilities of the model. This page
+is in English to also make it accessible to researchers who are interested in Dutch, but do not speak the language.
+{% endblock %}
+
+{% block content %}
+<p><b>Word similarity</b> is a simple tool to get a similarity rating for any two given words.
+A higher rating corresponds to a greater similarity.</p>
+
+<p><b>List similarity</b> allows you to enter a list of word pairs, and returns a table
+with the similarity values for those word pairs.</p>
+
+<p><b>Similar words</b> lets you enter one or more words from a particular category, and it will suggest similar words.</p>
+
+<p><b>Analogy</b> is a function that tries to complete analogies, e.g. <i>man</i> is to <i>king</i> as <i>woman</i> is to ... (answer: <i>queen</i>).</p>
+
+<p>On the <b>Outliers</b> page you can enter a list of words, and the function will try to return the word that does not belong in the list.</p>
+{% endblock %}

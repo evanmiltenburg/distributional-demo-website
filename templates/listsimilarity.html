@@ -1,0 +1,23 @@
+{% extends "demo_main.html" %}
+
+{% block description %}
+Here you can enter a list of word pairs, and receive all the similarity values for
+those word pairs. The list is cut off at 50 lines, so as to prevent overloading the server.
+
+{% endblock %}
+
+{% block content %}
+<form id='pairform' method='post' action='/listsimilarity/' style="display: inline-block;">
+    <p>
+<textarea name="pairs" rows="20" cols="30">
+appel peer
+appel ei
+kat hond
+kat muis
+hond hok
+</textarea>
+<input type='submit' value='Get similarity' />
+</p>
+
+</form>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "demo_main.html" %}
+
+{% block description %}
+Enter an incomplete analogy below, to see if the model can complete your analogy.
+{% endblock %}
+
+{% block content %}
+<form id='pairform' method='post' action='/analogy/' style="display: inline-block;">
+<p>
+    <input type="text" name="a" value={{a}}> is to <input type="text" name="b" value={{b}}> <br>
+    as <input type="text" name="c" value={{c}}> is to ... <input type='submit' value='Complete analogy' />
+</p>
+</form>
+<p>
+
+
+{% if results != None %}
+Candidates to complete the analogy:
+    <ul>
+    {% for word, value in results%}
+          <li>{{ word }} ({{value}})</li>
+    {% endfor %}
+    </ul>
+{% else %}
+Item(s) not in dictionary: <i>{{ not_in_vocab|join(', ') }}</i>.
+{% endif %}
+</p>
+{% endblock %}

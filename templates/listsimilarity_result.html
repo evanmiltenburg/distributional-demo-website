@@ -1,0 +1,33 @@
+{% extends "demo_main.html" %}
+
+{% block description %}
+
+{% endblock %}
+
+{% block content %}
+
+{% if results != None %}
+    <table>
+    <tr>
+        <td><b>Word 1</b></td>
+        <td><b>Word 2</b></td>
+        <td><b>Similarity</b></td>
+    </tr>
+    {% for (w1,w2), value in results.iteritems() %}
+      <tr>
+          <td>{{ w1 }}</td>
+          <td>{{ w2 }}</td>
+          <td>{{ value }}</td>
+      </tr>
+    {% endfor %}
+    </table>
+{% else %}
+No similarity ratings available.
+{% endif %}
+
+{% if unavailable|length > 0 %}
+Item(s) not in dictionary: <i>{{ unavailable|join(', ') }}</i>.
+{% endif %}
+
+<a class="button"  href="/listsimilarity">Try again</a>
+{% endblock %}

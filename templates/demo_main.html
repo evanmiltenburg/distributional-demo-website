@@ -1,0 +1,48 @@
+<!doctype html>
+<title>Web demo: a distributional semantic model for Dutch</title>
+<link rel=stylesheet type=text/css href='{{ url_for('static',filename='demopage.css')}}'>
+
+<div class="container">
+
+<div class="header">
+    <h1>A distributional semantic model for Dutch</h1>
+    <small style='font-family: Arial;'>
+        By <a href="/contact/">Emiel van Miltenburg</a>
+    </small>
+</div>
+
+<nav class="elem">
+    <ul>
+      <li>
+        <a class="button" href="/">Home</a>
+      </li>
+      <li>
+        <a class="button"  href="/wordsimilarity">Word similarity</a>
+      </li>
+      <li>
+        <a class="button"  href="/listsimilarity">List similarity</a>
+      </li>
+      <li>
+        <a class="button"  href="/similarwords">Similar words</a>
+      </li>
+      <li>
+        <a class="button"  href="/analogy">Analogy</a>
+      </li>
+      <li>
+        <a class="button"  href="/outliers">Outliers</a>
+      </li>
+      <li class="small-only">
+        <a class="button"  href="/contact">Contact</a>
+      </li>
+    </ul>
+</nav>
+
+<section>
+    {% block description %} {% endblock %}
+</section>
+
+<section>
+    {% block content %} {% endblock %}
+</section>
+
+</div>
